@@ -8,7 +8,7 @@ export const columns = [{
   sort: true,
 }, {
   dataField: 'tokenId',
-  text: 'token id',
+  text: 'token id'
 }, {
   dataField: 'batchId',
   text: 'batch id',
@@ -21,6 +21,16 @@ export const columns = [{
 }, {
   dataField: 'blockchainStatus',
   text: '',
+  style: (cell: any, row: any, rowIndex: number, colIndex: number) => {
+    if (rowIndex % 2 === 0) {
+      return {
+        backgroundColor: 'yellow'
+      };
+    }
+    return {
+      backgroundColor: 'red'
+    };
+  },
   filterRenderer: (onFilter: any, column: any) =>
     <th scope="col" className="col h5 border-end p-2">
       <button

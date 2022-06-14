@@ -56,25 +56,25 @@ const TemplateComponent = ({ data }: {
   const tableContext = useTableContext();
   return (
     <div>
+      <button
+        type="button"
+        className="btn btn-lg btn-success"
+        onClick={() => {
+          const result = data.map((data: any) => data.tokenId)
+          tableContext.setIds(result)
+        }}
+      >
+        Click to add all id to ids
+      </button>
+      <button
+        type="button"
+        className="btn btn-lg btn-danger"
+        onClick={() => tableContext.setIds([])}
+      >
+        Click to delete all id in ids
+      </button>
+      <h1>Selected ids:</h1>
       <>
-        <button
-          type="button"
-          className="btn btn-lg btn-success"
-          onClick={() => {
-            const result = data.map((data: any) => data.tokenId)
-            tableContext.setIds(result)
-          }}
-        >
-          Click to add all id to ids
-        </button>
-        <button
-          type="button"
-          className="btn btn-lg btn-danger"
-          onClick={() => tableContext.setIds([])}
-        >
-          Click to delete all id in ids
-        </button>
-        <h1>Selected ids:</h1>
         {tableContext.ids.map((id) =>
           <h3>{id}</h3>
         )}
