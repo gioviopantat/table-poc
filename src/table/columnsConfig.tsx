@@ -32,7 +32,7 @@ export const columns = [{
     };
   },
   filterRenderer: (onFilter: any, column: any) =>
-    <th scope="col" className="col h5 border-end p-2">
+    <div>
       <button
         title="blockchain"
         type="button"
@@ -67,6 +67,6 @@ export const columns = [{
           </ul>
         </div>
       </button>
-    </th>,
+    </div>,
   filter: customFilter({}),
 }];
