@@ -17,9 +17,6 @@ export const TableUIProvider = ({ children }: {
   children: JSX.Element | JSX.Element[]
 }) => {
   const [ids, setIds] = useState([] as string[]);
-  useEffect(() => {
-    console.log(ids);
-  }, [ids]);
   return (
     <TableContext.Provider
       value={{

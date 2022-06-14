@@ -75,9 +75,9 @@ const TemplateComponent = ({ data }: {
           Click to delete all id in ids
         </button>
         <h1>Selected ids:</h1>
-        {tableContext.ids.map((id) => {
-          <h3>id</h3>
-        })}
+        {tableContext.ids.map((id) =>
+          <h3>{id}</h3>
+        )}
       </>
     </div>
   )
